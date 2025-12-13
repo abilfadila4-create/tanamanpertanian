@@ -11,7 +11,7 @@ import io
 
 # --- 1. Konfigurasi Streamlit ---
 st.set_page_config(
-    page_title="Aplikasi Rekomendasi Tanaman Pertanian Presisi",
+    page_title="Websitte Rekomendasi Tanaman Pertanian Presisi",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -244,4 +244,5 @@ with tab4:
     ---
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
+
     """)
