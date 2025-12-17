@@ -73,21 +73,21 @@ CROP_IMAGES = {
     "pigeonpeas": "pigeonpeas.jpg",
     "mothbeans": "mothbeans.jpg",
     "mungbean": "mungbean.jpg",
-    "blackgram": "assets/images/blackgram.jpg",
-    "lentil": "assets/images/lentil.jpg",
-    "pomegranate": "assets/images/pomegranate.jpg",
-    "banana": "assets/images/banana.jpg",
-    "mango": "assets/images/mango.jpg",
-    "grapes": "assets/images/grapes.jpg",
-    "watermelon": "assets/images/watermelon.jpg",
-    "muskmelon": "assets/images/muskmelon.jpg",
-    "apple": "assets/images/apple.jpg",
-    "orange": "assets/images/orange.jpg",
-    "papaya": "assets/images/papaya.jpg",
-    "coconut": "assets/images/coconut.jpg",
-    "cotton": "assets/images/cotton.jpg",
-    "jute": "assets/images/jute.jpg",
-    "coffee": "assets/images/coffee.jpg"
+    "blackgram": "blackgram.jpg",
+    "lentil": "lentil.jpg",
+    "pomegranate": "pomegranate.jpg",
+    "banana": "banana.jpg",
+    "mango": "mango.jpg",
+    "grapes": "grapes.jpg",
+    "watermelon": "watermelon.jpg",
+    "muskmelon": "muskmelon.jpg",
+    "apple": "apple.jpg",
+    "orange": "orange.jpg",
+    "papaya": "papaya.jpg",
+    "coconut": "coconut.jpg",
+    "cotton": "cotton.jpg",
+    "jute": "jute.jpg",
+    "coffee": "coffee.jpg"
 }
 
 # --- SIDEBAR: Input Prediksi ---
@@ -283,3 +283,4 @@ with tab4:
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
     """)
+
