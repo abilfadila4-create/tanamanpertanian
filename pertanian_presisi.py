@@ -64,6 +64,32 @@ if df is None:
 model, scaler, accuracy, report = train_model(df)
 features = ['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']
 
+# --- Mapping Gambar Tanaman ---
+CROP_IMAGES = {
+    "rice": "rice.jpg",
+    "maize": "maize.jpg",
+    "chickpea": "chickpea.jpg",
+    "kidneybeans": "kidneybeans.jpg",
+    "pigeonpeas": "pigeonpeas.jpg",
+    "mothbeans": "mothbeans.jpg",
+    "mungbean": "mungbean.jpg",
+    "blackgram": "assets/images/blackgram.jpg",
+    "lentil": "assets/images/lentil.jpg",
+    "pomegranate": "assets/images/pomegranate.jpg",
+    "banana": "assets/images/banana.jpg",
+    "mango": "assets/images/mango.jpg",
+    "grapes": "assets/images/grapes.jpg",
+    "watermelon": "assets/images/watermelon.jpg",
+    "muskmelon": "assets/images/muskmelon.jpg",
+    "apple": "assets/images/apple.jpg",
+    "orange": "assets/images/orange.jpg",
+    "papaya": "assets/images/papaya.jpg",
+    "coconut": "assets/images/coconut.jpg",
+    "cotton": "assets/images/cotton.jpg",
+    "jute": "assets/images/jute.jpg",
+    "coffee": "assets/images/coffee.jpg"
+}
+
 # --- SIDEBAR: Input Prediksi ---
 
 st.sidebar.title("Prediksi Rekomendasi Tanaman")
@@ -112,16 +138,28 @@ for feature in features:
 if st.sidebar.button("Rekomendasikan Tanaman"):
     # 1. Konversi input ke DataFrame
     new_data = pd.DataFrame([input_data])
-    
+
     # 2. Scaling data input
     new_data_scaled = scaler.transform(new_data)
-    
+
     # 3. Prediksi
     prediction = model.predict(new_data_scaled)[0]
-    
-    # 4. Tampilkan Hasil
-    st.sidebar.success(f"Rekomendasi Terbaik:")
-    st.sidebar.markdown(f"## **{prediction.upper()}**")
+
+    # 4. Tampilkan hasil di SIDEBAR
+    st.sidebar.success("Rekomendasi Terbaik")
+    st.sidebar.markdown(f"**{prediction.upper()}**")
+
+    # 5. Gambar kecil tepat di bawah prediksi (SIDEBAR)
+    image_path = CROP_IMAGES.get(prediction.lower())
+
+    if image_path:
+        st.sidebar.image(
+            image_path,
+            width=140,  #ukuran kecil
+            caption=prediction.capitalize()
+        )
+    else:
+        st.sidebar.caption("Gambar tanaman belum tersedia")
 
 # --- MAIN PAGE CONTENT ---
 
@@ -244,6 +282,4 @@ with tab4:
     ---
     
     *Dibuat dengan Python, Streamlit, dan Scikit-learn.*
-
     """)
-
